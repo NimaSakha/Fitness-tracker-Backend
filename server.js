@@ -22,11 +22,13 @@ app.use("/api/user", userRoutes)
 
 // connect to db
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(
+    "mongodb+srv://nima:nima.Sakha2@mernapp.gzef4pa.mongodb.net/?retryWrites=true&w=majority"
+  )
   .then(() => {
     // listen for requests
-    app.listen(process.env.PORT, () => {
-      console.log("connected to db & listening on port", process.env.PORT)
+    app.listen(3006, () => {
+      console.log("connected to db & listening on port", 3006)
     })
   })
   .catch((error) => {
